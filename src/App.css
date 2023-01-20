@@ -2,11 +2,98 @@
 
 :root {
   --black: #222323;
-  --white: #f0f6f0;
+  --white: #83b07e;
 }
 
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: ease-in-out all 0.25s;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+body {
+  display: grid;
+  align-content: center;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 0;
+  padding: 48px;
+  border-radius: 6px;
+  max-width: 1024px;
+}
+
+.display {
   background-color: var(--black);
   color: var(--white);
-  font-family: 'Inconsolata', monospace;
+  margin-bottom: 12px;
+  padding: 24px;
+  font-size: 48px;
+  text-align: center;
+}
+
+input {
+  background-color: var(--black);
+  color: var(--white);
+  border: 0;
+  padding: 8px;
+  text-align: end;
+  max-width: 80vw;
+}
+
+input:focus {
+  outline: 6px double var(--black);
+}
+
+button {
+  background-color: var(--black);
+  color: var(--white);
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+button:active {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 16px;
+}
+
+.dice-button {
+  width: 64px;
+}
+
+.button-group {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+@media only screen and (max-width: 767.9px) {
+  .content {
+    padding: 24px;
+    max-width: 768px;
+  }
+
+  .button-group {
+    flex-flow: row wrap;
+  }
 }
