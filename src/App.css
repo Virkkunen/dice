@@ -100,3 +100,7 @@ button:active {
     flex-flow: row wrap;
   }
 }
+
+.footer {
+  margin-top: 24px;
+}
