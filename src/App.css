@@ -101,6 +101,25 @@ button:active {
   }
 }
 
-.footer {
+.footer, .footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 24px;
+  font-size: 16px;
+}
+
+.footer {
+  gap: 0 24px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+  gap: 0 12px;
+}
+
+.footer-separator {
+  font-size: 16px;
+  align-self: center;
 }
