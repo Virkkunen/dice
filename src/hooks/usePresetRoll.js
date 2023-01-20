@@ -4,12 +4,12 @@ import RollsContext from "../context/RollsContext";
 
 export default function usePresetRoll() {
   const { rollDice } = useRoll();
-  const { setRolls } = useContext(RollsContext);
+  // const { setRolls } = useContext(RollsContext);
 
 
   const onClick = ({ target: { value } }) => {
-    const r = rollDice(value);
-    setRolls(r);
+    rollDice(value);
+    // setRolls(r);
   };
 
   return {
