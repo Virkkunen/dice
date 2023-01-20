@@ -3,9 +3,9 @@ import { useContext } from 'react'
 import RollsContext from '../context/RollsContext'
 
 export default function Display() {
-  const { rolls } = useContext(RollsContext);
+  const { total } = useContext(RollsContext);
 
   return (
-    <div className='display'>{rolls || '--'}</div>
+    <div className='display'>{total || '--'}</div>
   )
 }
