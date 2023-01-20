@@ -1,12 +1,20 @@
 import React from "react";
+import useRoll from "../hooks/useRoll";
 
 export default function DiceGroup() {
+  const { rollDice } = useRoll();
+
+  const handleClick = ({ target: { value } }) => {
+    rollDice(value);
+    console.log(value)
+  };
+
   return (
     <div className="button-group">
-      <button type="button" className="dice-button" value="3" name="d3">
+      <button onClick={handleClick} type="button" className="dice-button" value="3" name="d3">
         d3
       </button>
-      <button type="button" className="dice-button" value="6" name="d6">
+      <button onClick={handleClick} type="button" className="dice-button" value="6" name="d6">
         d6
       </button>
       <button type="button" className="dice-button" value="8" name="d8">

@@ -13,8 +13,9 @@ function useRoll() {
       thisRoll = Math.floor(Math.random() * face) + 1;
       resultArr.push(thisRoll);
     }
-
+    console.log(resultArr)
     setRolls(resultArr);
+    setIsRolling(false);
   };
 
   return {
