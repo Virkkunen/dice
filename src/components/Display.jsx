@@ -6,6 +6,6 @@ export default function Display() {
   const { rolls } = useContext(RollsContext);
 
   return (
-    <div className='display'>{rolls || '---'}</div>
+    <div className='display'>{rolls || '--'}</div>
   )
 }
