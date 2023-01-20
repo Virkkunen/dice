@@ -20,7 +20,7 @@ body {
   align-content: center;
   place-items: center;
   min-height: 100vh;
-  background-color: var(--white);
+  background-color: var(--black);
   color: var(--black);
 }
 
@@ -30,9 +30,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px 0;
-  padding: 48px;
+  padding: 64px;
   border-radius: 6px;
   max-width: 1024px;
+  background-color: var(--white);
+
 }
 
 .display {
