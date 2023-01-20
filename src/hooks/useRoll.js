@@ -16,21 +16,9 @@ function useRoll() {
     return resultArr;
   };
 
-  const validateString = (str) => {
-    const strValidation = /^(?=(\d*|d)d)\d*d\d+$/;
-    return strValidation.test(str);
-  };
-
-  const calcInput = (inputDice) => {
-    console.log(validateString(inputDice))
-    const inputArr = inputDice.toLowerCase().split('d');
-    console.log(inputArr)
-  };
-
   return {
     rollDice,
     isRolling,
-    calcInput,
   };
 }
 
