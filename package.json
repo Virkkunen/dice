@@ -1,6 +1,7 @@
 {
   "name": "dice",
   "version": "0.0.1",
+  "homepage": "https://virkkunen.github.io/dice",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -9,8 +10,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "homepage": "https://virkkunen.github.io/dice"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
