@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 function useRoll() {
   const [isRolling, setIsRolling] = useState(false);
-  const [rolls, setRolls] = useState(null);
 
   const rollDice = (face, dice = 1) => {
     setIsRolling(true);
@@ -13,15 +12,13 @@ function useRoll() {
       thisRoll = Math.floor(Math.random() * face) + 1;
       resultArr.push(thisRoll);
     }
-    console.log(resultArr)
-    setRolls(resultArr);
     setIsRolling(false);
+    return resultArr;
   };
 
   return {
     rollDice,
     isRolling,
-    rolls,
   };
 }
 
