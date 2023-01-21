@@ -54,16 +54,6 @@ Start the server
 - [@Virkkunen](https://www.github.com/Virkkunen)
 
 
-## Support
-
-For support, email vrkknn@vrkknn.net
-
-
-## Feedback
-
-If you have any feedback, please reach out to us at fake@fake.com
-
-
 ## Tech Stack
 
 React, React hooks, homebrewed CSS styles
