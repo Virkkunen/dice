@@ -32,8 +32,11 @@ function useRoll() {
     calcTotal(resultArr, operator, mod);
   };
 
+  const rollPresetDie = (die) => rollDice(["1", die]);
+
   return {
     rollDice,
+    rollPresetDie,
     isRolling,
     total,
     rolls,
