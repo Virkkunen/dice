@@ -31,7 +31,6 @@ body {
   justify-content: center;
   gap: 12px 0;
   padding: 64px;
-  border-radius: 6px;
   max-width: 1024px;
   background-color: var(--white);
 
