@@ -1,49 +1,52 @@
-import useRoll from './useRoll';
+import useRoll from "./useRoll";
 import { useState } from "react";
 
 export default function useInput() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const { rollDice } = useRoll();
 
-  const invalidInput = () => setInputValue('Input invalid');
-
   const validateString = (str) => {
-    const strValidation = /^(d|[0-9]+d)[0-9]+([+-][0-9]+)?$/; //thanks chatGPT
-    return (strValidation.test(str) && str.length <= 10);
-  };
-
-  const rollLogic = (filteredArr, operator) => {
-    // [dice, face, mod], operator
-    if (filteredArr.length === 3 && operator) {
-      rollDice(filteredArr[1], filteredArr[0], operator, filteredArr[2])
-    }
-
-    //[face, mod], operator
-
-    // [dice, face, mod]
-
-    // [face]
+    // accepts 2d20, d12, 3d3+4, d10-2
+    const strValidation = /^(d|[0-9]+d)[0-9]+([+-][0-9]+)?$/gi; //thanks chatGPT
+    return strValidation.test(str) && str.length <= 10; // arbitrary string length limit
   };
 
   const calcInput = () => {
-    if (!validateString(inputValue)) return invalidInput();
-    
-    // convert string to array
-    const separator = /\d+|[d+-]/g;
-    const inputArr = inputValue.toLowerCase().match(separator);
-    // filter "d" and operator sign
-    const filteredArr = inputArr.filter((x) => x !== "d" && x !== "+" && x !== "-");
-    // save operator sign to variable
-    const operator = inputArr.filter((x) => x === "+" || x === "-")[0];
-    // roll log
-    rollLogic(filteredArr, operator);
+    /*
+      index 0 is the amount of dice to roll
+      index 1 is the face value
+      index 2 is the operator
+      index 3 is the mod
+      3d20+10 = [3, 20, +, 10]
+    */
+
+    console.log("inputValue: " + inputValue);
+    if (!validateString(inputValue)) return;
+    console.log("validated");
+
+    const singleDieRegex = /(^d)+(\d+)/gi;
+    if (singleDieRegex.test(inputValue)) {
+      console.log("single die: " + inputValue);
+      const diceArray = inputValue.match(/\d+|[+,-]/gi);
+      diceArray.unshift("1"); // for consistency, values are strings
+      console.log(diceArray)
+      rollDice(diceArray)
+    }
+
+    const multiDiceRegex = /^(\d+)([d])(\d+)/gi;
+    if (multiDiceRegex.test(inputValue)) {
+      console.log("multi dice: " + inputValue)
+      const diceArray = inputValue.match(/\d+|[+,-]/gi);
+      console.log(diceArray)
+      rollDice(diceArray)
+    };
   };
 
-  const handleChange = ({target: {value}}) => setInputValue(value);
+  const handleChange = ({ target: { value } }) => setInputValue(value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    calcInput(inputValue);
+    calcInput();
   };
 
   return {
@@ -51,4 +54,4 @@ export default function useInput() {
     handleSubmit,
     handleChange,
   };
-};
+}
