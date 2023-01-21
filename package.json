@@ -1,6 +1,6 @@
 {
   "name": "dice",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "homepage": "https://virkkunen.github.io/dice",
   "private": true,
   "dependencies": {
