@@ -3,7 +3,7 @@ import RollsContext from '../context/RollsContext';
 
 export default function Display() {
   const { total, rolls } = useContext(RollsContext);
-  const hasRolls = useMemo(() => rolls && rolls.length >= 1, [rolls]);
+  const hasRolls = useMemo(() => rolls && rolls.length > 1, [rolls]);
 
   return (
     <div className='display'>
