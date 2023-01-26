@@ -8,7 +8,7 @@ A simple dice roller made with React
 
 - Preset rolls of 7 dice `(d3, d6, d8, d10, d12, d20, d100)`
 - Input field to roll a custom number of dice with custom face values `(200d17)`
-- Can roll dice with modifiers `(2d20+10, d12-6)`
+- Supports dice notation `(5d6, 2d20+10, d12-4)`
 - Mobile responsive
 
 
@@ -60,7 +60,7 @@ React, React hooks, homebrewed CSS styles
 
 
 ## To Do
-- [ ] Use useMemo and useCallback for optimizations
+- [x] Use useMemo and useCallback for optimizations
 - [ ] Show operator and modifier on rolls
 - [ ] Animation while rolling the dice
 - [ ] Multiple different dice rolling (2d20+2 + d3)
