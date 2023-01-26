@@ -38,19 +38,12 @@ export default function useInput() {
     }
   }, [inputValue, rollDice, validateString]);
 
-  const handleChange = useCallback(
-    ({ target: { value } }) => setInputValue(value),
-    []
-  );
-  console.log(inputValue);
+  const handleChange = useCallback(({ target: { value } }) => setInputValue(value), []);
 
-  const handleSubmit = useCallback(
-    (e) => {
+  const handleSubmit = useCallback((e) => {
       e.preventDefault();
       calcInput();
-    },
-    [calcInput]
-  );
+    }, [calcInput]);
 
   return {
     inputValue,
